@@ -20,8 +20,6 @@ do
 		echo "Adicionado Cherry-Pick do hash ${j}"
 		git cherry-pick ${hash}
 	done
-	echo "Criando Commit: [SO - ${number_os}] ${comments}"
-	git commit -m "[SO - ${number_os}] ${comments}"
 	echo "Realizando Push"
 	git push origin ${i}_${number_os}
 done
