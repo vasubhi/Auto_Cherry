@@ -4,6 +4,7 @@ read -p "-> " number_os
 echo 'Comentário:'
 read -p "-> " comments
 echo 'Digite o(s) número(s) da(s) Versão(ões):    -- OBS: Em casos de múltiplas versões, separe com espaços.'
+echo 'Exemplo: 3.05.1765 3.05.1764 3.05.1764'
 	read -p "-> " -a number_version
 echo 'Digite o(s) Hashe(s):   -- OBS: Em casos de múltiplos hashes, separe com espaços.'
 	read -p "-> " -a hash
