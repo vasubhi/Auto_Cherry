@@ -5,9 +5,15 @@ echo 'Comentário:'
 read -p "-> " comments
 echo 'Digite o(s) número(s) da(s) Versão(ões):    -- OBS: Em casos de múltiplas versões, separe com espaços.'
 echo 'Exemplo: 3.05.1765 3.05.1764 3.05.1764'
+while [[ -z "$array_version" ]]
+do
 	read -p "-> " -a array_version
+done
 echo 'Digite o(s) Hashe(s):   -- OBS: Em casos de múltiplos hashes, separe com espaços.'
+while [[ -z "$array_hash" ]]
+do
 	read -p "-> " -a array_hash
+done
 for version in ${array_version[@]}
 do
 	echo "Trocando para branch ${version}"
