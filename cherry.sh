@@ -7,6 +7,7 @@ do
 	read -p "-> " -a array_version
 done
 echo 'Digite o(s) Hashe(s):   -- OBS: Em casos de múltiplos hashes, separe com espaços.'
+echo '[NÃO ADICIONE HASHES DO TIPO MERGE]'
 while [[ -z "$array_hash" ]]
 do
 	read -p "-> " -a array_hash
@@ -18,12 +19,13 @@ do
 	echo "Atualizando Branch ${version}"
 	git pull origin ${version}
 	echo "Criando branch ${version}_${number_os}"
-	git checkout -b ${version}_${number_os} 
+	git checkout -b ${version}_${number_os}
 	for hash in ${array_hash[@]}
 	do
 		echo "Adicionado Cherry-Pick do hash ${hash}"
 		git cherry-pick ${hash}
 	done
+	read -p "Aperte enter para autorizar git push -> " kkk
 	echo "Realizando Push"
 	git push origin ${version}_${number_os}
 done
